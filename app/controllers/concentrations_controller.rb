@@ -1,6 +1,7 @@
 class ConcentrationsController < ApplicationController
   def index
-    @concentrations = Concentration.page(params[:page]).per(10)
+    @q = Concentration.ransack(params[:q])
+    @concentrations = @q.result(:distinct => true).includes(:course_concentrations).page(params[:page]).per(10)
 
     render("concentration_templates/index.html.erb")
   end

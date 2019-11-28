@@ -1,6 +1,7 @@
 class CourseCategoriesController < ApplicationController
   def index
-    @course_categories = CourseCategory.page(params[:page]).per(10)
+    @q = CourseCategory.ransack(params[:q])
+    @course_categories = @q.result(:distinct => true).includes(:course, :category).page(params[:page]).per(10)
 
     render("course_category_templates/index.html.erb")
   end

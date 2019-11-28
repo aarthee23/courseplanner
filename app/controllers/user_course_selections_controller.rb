@@ -1,6 +1,7 @@
 class UserCourseSelectionsController < ApplicationController
   def index
-    @user_course_selections = UserCourseSelection.page(params[:page]).per(10)
+    @q = UserCourseSelection.ransack(params[:q])
+    @user_course_selections = @q.result(:distinct => true).includes(:course, :course_plan).page(params[:page]).per(10)
 
     render("user_course_selection_templates/index.html.erb")
   end
