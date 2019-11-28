@@ -16,7 +16,7 @@
     </label>
 
     <!-- Input for course_plan_id start -->
-    <input type="text" id="course_plan_id" name="course_plan_id" class="form-control">
+    <%= select_tag(:course_plan_id, options_from_collection_for_select(CoursePlan.all, :id, :created_at, @user_course_selection.course_plan_id), :class => "form-control") %>
     <!-- Input for course_plan_id end -->
   </div>
   <!-- Label and input for course_plan_id end -->
