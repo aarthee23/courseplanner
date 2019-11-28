@@ -1,4 +1,6 @@
 ActiveAdmin.register Concentration do
+
+ permit_params :name, :req_unit
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
