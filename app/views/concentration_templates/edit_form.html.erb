@@ -1,0 +1,44 @@
+<h1>
+  Edit concentration #<%= @concentration.id %>
+</h1>
+
+<hr>
+
+<!-- Form concentration start -->
+<form action="/update_concentration/<%= @concentration.id %>" method="post">
+<!-- Form concentration end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @concentration.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for req_unit start -->
+  <div class="form-group">
+    <label for="req_unit">
+      Req unit
+    </label>
+
+    <!-- Input for req_unit start -->
+    <input type="text" id="req_unit" name="req_unit" class="form-control" value="<%= @concentration.req_unit %>">
+    <!-- Input for req_unit end -->
+  </div>
+  <!-- Label and input for req_unit end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update concentration
+  </button>
+</form>
+
+<hr>
+
+<a href="/concentrations">
+  Go back
+</a>
