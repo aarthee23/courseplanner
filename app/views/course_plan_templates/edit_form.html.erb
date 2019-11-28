@@ -1,0 +1,32 @@
+<h1>
+  Edit course plan #<%= @course_plan.id %>
+</h1>
+
+<hr>
+
+<!-- Form course_plan start -->
+<form action="/update_course_plan/<%= @course_plan.id %>" method="post">
+<!-- Form course_plan end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @course_plan.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update course plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/course_plans">
+  Go back
+</a>

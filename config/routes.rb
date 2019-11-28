@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Course plan resource:
+
+  # CREATE
+  get("/course_plans/new", { :controller => "course_plans", :action => "new_form" })
+  post("/create_course_plan", { :controller => "course_plans", :action => "create_row" })
+
+  # READ
+  get("/course_plans", { :controller => "course_plans", :action => "index" })
+  get("/course_plans/:id_to_display", { :controller => "course_plans", :action => "show" })
+
+  # UPDATE
+  get("/course_plans/:prefill_with_id/edit", { :controller => "course_plans", :action => "edit_form" })
+  post("/update_course_plan/:id_to_modify", { :controller => "course_plans", :action => "update_row" })
+
+  # DELETE
+  get("/delete_course_plan/:id_to_remove", { :controller => "course_plans", :action => "destroy_row" })
+
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
 

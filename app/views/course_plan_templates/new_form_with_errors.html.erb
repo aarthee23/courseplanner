@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @course_plan.present? %>
+  <% if @course_plan.errors.any? %>
+    <% @course_plan.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new course plan
+</h1>
+
+
+<hr>
+
+<!-- Form course_plan start -->
+<form action="/create_course_plan" method="post">
+<!-- Form course_plan end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @course_plan.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create course plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/course_plans">
+  Go back
+</a>
