@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Course concentration resource:
+
+  # CREATE
+  get("/course_concentrations/new", { :controller => "course_concentrations", :action => "new_form" })
+  post("/create_course_concentration", { :controller => "course_concentrations", :action => "create_row" })
+
+  # READ
+  get("/course_concentrations", { :controller => "course_concentrations", :action => "index" })
+  get("/course_concentrations/:id_to_display", { :controller => "course_concentrations", :action => "show" })
+
+  # UPDATE
+  get("/course_concentrations/:prefill_with_id/edit", { :controller => "course_concentrations", :action => "edit_form" })
+  post("/update_course_concentration/:id_to_modify", { :controller => "course_concentrations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_course_concentration/:id_to_remove", { :controller => "course_concentrations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Course category resource:
 
   # CREATE

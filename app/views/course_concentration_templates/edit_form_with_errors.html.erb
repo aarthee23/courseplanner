@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @course_concentration.errors.any? %>
+  <% @course_concentration.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit course concentration #<%= @course_concentration.id %>
+</h1>
+
+<hr>
+
+<!-- Form course_concentration start -->
+<form action="/update_course_concentration/<%= @course_concentration.id %>" method="post">
+<!-- Form course_concentration end -->
+
+  <!-- Label and input for course_id start -->
+  <div class="form-group">
+    <label for="course_id">
+      Course
+    </label>
+
+    <!-- Input for course_id start -->
+    <input type="text" id="course_id" name="course_id" class="form-control" value="<%= @course_concentration.course_id %>">
+    <!-- Input for course_id end -->
+  </div>
+  <!-- Label and input for course_id end -->
+
+  <!-- Label and input for concentration_id start -->
+  <div class="form-group">
+    <label for="concentration_id">
+      Concentration
+    </label>
+
+    <!-- Input for concentration_id start -->
+    <input type="text" id="concentration_id" name="concentration_id" class="form-control" value="<%= @course_concentration.concentration_id %>">
+    <!-- Input for concentration_id end -->
+  </div>
+  <!-- Label and input for concentration_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update course concentration
+  </button>
+</form>
+
+<hr>
+
+<a href="/course_concentrations">
+  Go back
+</a>
