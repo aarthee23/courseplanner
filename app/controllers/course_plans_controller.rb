@@ -10,7 +10,7 @@ class CoursePlansController < ApplicationController
   end
 
   def index
-    @course_plans = CoursePlan.all
+    @course_plans = CoursePlan.page(params[:page]).per(10)
 
     render("course_plan_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class ConcentrationsController < ApplicationController
   def index
-    @concentrations = Concentration.all
+    @concentrations = Concentration.page(params[:page]).per(10)
 
     render("concentration_templates/index.html.erb")
   end

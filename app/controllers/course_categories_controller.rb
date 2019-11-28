@@ -1,6 +1,6 @@
 class CourseCategoriesController < ApplicationController
   def index
-    @course_categories = CourseCategory.all
+    @course_categories = CourseCategory.page(params[:page]).per(10)
 
     render("course_category_templates/index.html.erb")
   end
