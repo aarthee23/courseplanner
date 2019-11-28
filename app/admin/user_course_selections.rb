@@ -1,4 +1,6 @@
 ActiveAdmin.register UserCourseSelection do
+
+ permit_params :course_plan_id, :course_id, :professor, :quarter, :day, :hours_of_preparation, :rating, :bid_points, :pre_req
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
