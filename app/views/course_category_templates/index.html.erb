@@ -58,13 +58,21 @@
 
         <!-- Display course_category.course_id start -->
         <td>
-          <%= course_category.course.title %>
+          <% if course_category.course.present? %>
+            <a href="/courses/<%= course_category.course.id %>">
+              <%= course_category.course.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display course_category.course_id end -->
 
         <!-- Display course_category.category_id start -->
         <td>
-          <%= course_category.category.name %>
+          <% if course_category.category.present? %>
+            <a href="/categories/<%= course_category.category.id %>">
+              <%= course_category.category.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display course_category.category_id end -->
 

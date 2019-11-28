@@ -54,7 +54,11 @@
 
         <!-- Display course_plan.user_id start -->
         <td>
-          <%= course_plan.user.created_at %>
+          <% if course_plan.user.present? %>
+            <a href="/users/<%= course_plan.user.id %>">
+              <%= course_plan.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display course_plan.user_id end -->
 

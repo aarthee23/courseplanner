@@ -86,13 +86,21 @@
 
         <!-- Display user_course_selection.course_plan_id start -->
         <td>
-          <%= user_course_selection.course_plan.created_at %>
+          <% if user_course_selection.course_plan.present? %>
+            <a href="/course_plans/<%= user_course_selection.course_plan.id %>">
+              <%= user_course_selection.course_plan.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_course_selection.course_plan_id end -->
 
         <!-- Display user_course_selection.course_id start -->
         <td>
-          <%= user_course_selection.course.title %>
+          <% if user_course_selection.course.present? %>
+            <a href="/courses/<%= user_course_selection.course.id %>">
+              <%= user_course_selection.course.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_course_selection.course_id end -->
 

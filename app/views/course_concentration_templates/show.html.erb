@@ -34,7 +34,11 @@
       </dt>
       <!-- Display course_id start -->
       <dd>
-        <%= @course_concentration.course_id %>
+        <% if @course_concentration.course.present? %>
+          <a href="/courses/<%= @course_concentration.course_id %>">
+            <%= @course_concentration.course.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display course_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display concentration_id start -->
       <dd>
-        <%= @course_concentration.concentration_id %>
+        <% if @course_concentration.concentration.present? %>
+          <a href="/concentrations/<%= @course_concentration.concentration_id %>">
+            <%= @course_concentration.concentration.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display concentration_id end -->
 

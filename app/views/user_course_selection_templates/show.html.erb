@@ -34,7 +34,11 @@
       </dt>
       <!-- Display course_plan_id start -->
       <dd>
-        <%= @user_course_selection.course_plan_id %>
+        <% if @user_course_selection.course_plan.present? %>
+          <a href="/course_plans/<%= @user_course_selection.course_plan_id %>">
+            <%= @user_course_selection.course_plan.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display course_plan_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display course_id start -->
       <dd>
-        <%= @user_course_selection.course_id %>
+        <% if @user_course_selection.course.present? %>
+          <a href="/courses/<%= @user_course_selection.course_id %>">
+            <%= @user_course_selection.course.title %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display course_id end -->
 

@@ -58,13 +58,21 @@
 
         <!-- Display course_concentration.course_id start -->
         <td>
-          <%= course_concentration.course.title %>
+          <% if course_concentration.course.present? %>
+            <a href="/courses/<%= course_concentration.course.id %>">
+              <%= course_concentration.course.title %>
+            </a>
+          <% end %>
         </td>
         <!-- Display course_concentration.course_id end -->
 
         <!-- Display course_concentration.concentration_id start -->
         <td>
-          <%= course_concentration.concentration.name %>
+          <% if course_concentration.concentration.present? %>
+            <a href="/concentrations/<%= course_concentration.concentration.id %>">
+              <%= course_concentration.concentration.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display course_concentration.concentration_id end -->
 

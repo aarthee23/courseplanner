@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @course_plan.user_id %>
+        <% if @course_plan.user.present? %>
+          <a href="/users/<%= @course_plan.user_id %>">
+            <%= @course_plan.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
