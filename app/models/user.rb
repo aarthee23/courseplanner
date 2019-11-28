@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :course_plans,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
