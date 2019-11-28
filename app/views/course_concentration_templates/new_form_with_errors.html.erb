@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for concentration_id start -->
-    <input type="text" id="concentration_id" name="concentration_id" class="form-control" value="<%= @course_concentration.concentration_id %>">
+    <%= select_tag(:concentration_id, options_from_collection_for_select(Concentration.all, :id, :name, @course_concentration.concentration_id), :class => "form-control") %>
     <!-- Input for concentration_id end -->
   </div>
   <!-- Label and input for concentration_id end -->
