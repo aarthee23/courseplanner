@@ -67,6 +67,22 @@ class UserCourseSelectionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_course
+    @user_course_selection = UserCourseSelection.find(params.fetch("id_to_remove"))
+
+    @user_course_selection.destroy
+
+    redirect_to("/courses/#{@user_course_selection.course_id}", notice: "UserCourseSelection deleted successfully.")
+  end
+
+  def destroy_row_from_course_plan
+    @user_course_selection = UserCourseSelection.find(params.fetch("id_to_remove"))
+
+    @user_course_selection.destroy
+
+    redirect_to("/course_plans/#{@user_course_selection.course_plan_id}", notice: "UserCourseSelection deleted successfully.")
+  end
+
   def destroy_row
     @user_course_selection = UserCourseSelection.find(params.fetch("id_to_remove"))
 

@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_user_course_selection/:id_to_remove", { :controller => "user_course_selections", :action => "destroy_row" })
+  get("/delete_user_course_selection_from_course_plan/:id_to_remove", { :controller => "user_course_selections", :action => "destroy_row_from_course_plan" })
+  get("/delete_user_course_selection_from_course/:id_to_remove", { :controller => "user_course_selections", :action => "destroy_row_from_course" })
 
   #------------------------------
 
@@ -37,6 +39,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_course_concentration/:id_to_remove", { :controller => "course_concentrations", :action => "destroy_row" })
+  get("/delete_course_concentration_from_concentration/:id_to_remove", { :controller => "course_concentrations", :action => "destroy_row_from_concentration" })
+  get("/delete_course_concentration_from_course/:id_to_remove", { :controller => "course_concentrations", :action => "destroy_row_from_course" })
 
   #------------------------------
 
@@ -56,6 +60,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_course_category/:id_to_remove", { :controller => "course_categories", :action => "destroy_row" })
+  get("/delete_course_category_from_category/:id_to_remove", { :controller => "course_categories", :action => "destroy_row_from_category" })
+  get("/delete_course_category_from_course/:id_to_remove", { :controller => "course_categories", :action => "destroy_row_from_course" })
 
   #------------------------------
 
@@ -75,6 +81,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_course_plan/:id_to_remove", { :controller => "course_plans", :action => "destroy_row" })
+  get("/delete_course_plan_from_user/:id_to_remove", { :controller => "course_plans", :action => "destroy_row_from_user" })
 
   #------------------------------
 

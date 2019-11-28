@@ -53,6 +53,22 @@ class CourseCategoriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_course
+    @course_category = CourseCategory.find(params.fetch("id_to_remove"))
+
+    @course_category.destroy
+
+    redirect_to("/courses/#{@course_category.course_id}", notice: "CourseCategory deleted successfully.")
+  end
+
+  def destroy_row_from_category
+    @course_category = CourseCategory.find(params.fetch("id_to_remove"))
+
+    @course_category.destroy
+
+    redirect_to("/categories/#{@course_category.category_id}", notice: "CourseCategory deleted successfully.")
+  end
+
   def destroy_row
     @course_category = CourseCategory.find(params.fetch("id_to_remove"))
 

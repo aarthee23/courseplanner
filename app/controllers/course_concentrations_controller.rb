@@ -53,6 +53,22 @@ class CourseConcentrationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_course
+    @course_concentration = CourseConcentration.find(params.fetch("id_to_remove"))
+
+    @course_concentration.destroy
+
+    redirect_to("/courses/#{@course_concentration.course_id}", notice: "CourseConcentration deleted successfully.")
+  end
+
+  def destroy_row_from_concentration
+    @course_concentration = CourseConcentration.find(params.fetch("id_to_remove"))
+
+    @course_concentration.destroy
+
+    redirect_to("/concentrations/#{@course_concentration.concentration_id}", notice: "CourseConcentration deleted successfully.")
+  end
+
   def destroy_row
     @course_concentration = CourseConcentration.find(params.fetch("id_to_remove"))
 

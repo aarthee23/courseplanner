@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Course Plans
+
+    <a data-toggle="collapse" href="#user_course_plans_new_form">
+      Add course plan
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.course_plans.each do |course_plan| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/course_plans/<%= course_plan.id %>">
+          <%= course_plan.created_at %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

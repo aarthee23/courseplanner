@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Course Categories
+
+    <a data-toggle="collapse" href="#course_course_categories_new_form">
+      Add course category
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @course.course_categories.each do |course_category| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/course_categories/<%= course_category.id %>">
+          <%= course_category.course_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_course_category_from_course/<%= course_category.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="course_course_categories_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
