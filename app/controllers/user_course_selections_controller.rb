@@ -39,6 +39,50 @@ class UserCourseSelectionsController < ApplicationController
     end
   end
 
+  def create_row_from_course
+    @user_course_selection = UserCourseSelection.new
+
+    @user_course_selection.course_plan_id = params.fetch("course_plan_id")
+    @user_course_selection.course_id = params.fetch("course_id")
+    @user_course_selection.professor = params.fetch("professor")
+    @user_course_selection.quarter = params.fetch("quarter")
+    @user_course_selection.day = params.fetch("day")
+    @user_course_selection.hours_of_preparation = params.fetch("hours_of_preparation")
+    @user_course_selection.rating = params.fetch("rating")
+    @user_course_selection.bid_points = params.fetch("bid_points")
+    @user_course_selection.pre_req = params.fetch("pre_req")
+
+    if @user_course_selection.valid?
+      @user_course_selection.save
+
+      redirect_to("/courses/#{@user_course_selection.course_id}", notice: "UserCourseSelection created successfully.")
+    else
+      render("user_course_selection_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_course_plan
+    @user_course_selection = UserCourseSelection.new
+
+    @user_course_selection.course_plan_id = params.fetch("course_plan_id")
+    @user_course_selection.course_id = params.fetch("course_id")
+    @user_course_selection.professor = params.fetch("professor")
+    @user_course_selection.quarter = params.fetch("quarter")
+    @user_course_selection.day = params.fetch("day")
+    @user_course_selection.hours_of_preparation = params.fetch("hours_of_preparation")
+    @user_course_selection.rating = params.fetch("rating")
+    @user_course_selection.bid_points = params.fetch("bid_points")
+    @user_course_selection.pre_req = params.fetch("pre_req")
+
+    if @user_course_selection.valid?
+      @user_course_selection.save
+
+      redirect_to("/course_plans/#{@user_course_selection.course_plan_id}", notice: "UserCourseSelection created successfully.")
+    else
+      render("user_course_selection_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @user_course_selection = UserCourseSelection.find(params.fetch("prefill_with_id"))
 

@@ -32,6 +32,36 @@ class CourseConcentrationsController < ApplicationController
     end
   end
 
+  def create_row_from_course
+    @course_concentration = CourseConcentration.new
+
+    @course_concentration.course_id = params.fetch("course_id")
+    @course_concentration.concentration_id = params.fetch("concentration_id")
+
+    if @course_concentration.valid?
+      @course_concentration.save
+
+      redirect_to("/courses/#{@course_concentration.course_id}", notice: "CourseConcentration created successfully.")
+    else
+      render("course_concentration_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_concentration
+    @course_concentration = CourseConcentration.new
+
+    @course_concentration.course_id = params.fetch("course_id")
+    @course_concentration.concentration_id = params.fetch("concentration_id")
+
+    if @course_concentration.valid?
+      @course_concentration.save
+
+      redirect_to("/concentrations/#{@course_concentration.concentration_id}", notice: "CourseConcentration created successfully.")
+    else
+      render("course_concentration_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @course_concentration = CourseConcentration.find(params.fetch("prefill_with_id"))
 

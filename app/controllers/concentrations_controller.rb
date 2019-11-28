@@ -6,6 +6,7 @@ class ConcentrationsController < ApplicationController
   end
 
   def show
+    @course_concentration = CourseConcentration.new
     @concentration = Concentration.find(params.fetch("id_to_display"))
 
     render("concentration_templates/show.html.erb")

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/user_course_selections/new", { :controller => "user_course_selections", :action => "new_form" })
   post("/create_user_course_selection", { :controller => "user_course_selections", :action => "create_row" })
+  post("/create_user_course_selection_from_course_plan", { :controller => "user_course_selections", :action => "create_row_from_course_plan" })
+  post("/create_user_course_selection_from_course", { :controller => "user_course_selections", :action => "create_row_from_course" })
 
   # READ
   get("/user_course_selections", { :controller => "user_course_selections", :action => "index" })
@@ -28,6 +30,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/course_concentrations/new", { :controller => "course_concentrations", :action => "new_form" })
   post("/create_course_concentration", { :controller => "course_concentrations", :action => "create_row" })
+  post("/create_course_concentration_from_concentration", { :controller => "course_concentrations", :action => "create_row_from_concentration" })
+  post("/create_course_concentration_from_course", { :controller => "course_concentrations", :action => "create_row_from_course" })
 
   # READ
   get("/course_concentrations", { :controller => "course_concentrations", :action => "index" })
@@ -49,6 +53,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/course_categories/new", { :controller => "course_categories", :action => "new_form" })
   post("/create_course_category", { :controller => "course_categories", :action => "create_row" })
+  post("/create_course_category_from_category", { :controller => "course_categories", :action => "create_row_from_category" })
+  post("/create_course_category_from_course", { :controller => "course_categories", :action => "create_row_from_course" })
 
   # READ
   get("/course_categories", { :controller => "course_categories", :action => "index" })

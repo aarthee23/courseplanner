@@ -6,6 +6,7 @@ class CoursePlansController < ApplicationController
   end
 
   def show
+    @user_course_selection = UserCourseSelection.new
     @course_plan = CoursePlan.find(params.fetch("id_to_display"))
 
     render("course_plan_templates/show.html.erb")

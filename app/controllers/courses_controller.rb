@@ -6,6 +6,9 @@ class CoursesController < ApplicationController
   end
 
   def show
+    @user_course_selection = UserCourseSelection.new
+    @course_concentration = CourseConcentration.new
+    @course_category = CourseCategory.new
     @course = Course.find(params.fetch("id_to_display"))
 
     render("course_templates/show.html.erb")
