@@ -1,4 +1,14 @@
 class CoursePlansController < ApplicationController
+  before_action :current_user_must_be_course_plan_user, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_course_plan_user
+    course_plan = CoursePlan.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == course_plan.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @course_plans = CoursePlan.all
 

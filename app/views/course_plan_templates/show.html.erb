@@ -13,17 +13,21 @@
 
       <!-- Edit link course_plan start -->
       <div class="col">
-        <a href="/course_plans/<%= @course_plan.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit course plan
-        </a>
+        <% if current_user == @course_plan.user %>
+          <a href="/course_plans/<%= @course_plan.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit course_plan
+          </a>
+        <% end %>
       </div>
       <!-- Edit link course_plan end -->
 
       <!-- Delete link course_plan start -->
       <div class="col">
-        <a href="/delete_course_plan/<%= @course_plan.id %>" class="btn btn-block btn-outline-secondary">
-          Delete course plan
-        </a>
+        <% if current_user == @course_plan.user %>
+          <a href="/delete_course_plan/<%= @course_plan.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete course_plan
+          </a>
+        <% end %>
       </div>
       <!-- Delete link course_plan end -->
     </div>
