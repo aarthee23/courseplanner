@@ -41,7 +41,7 @@ class CoursePlansController < ApplicationController
   def update_row
     @course_plan = CoursePlan.find(params.fetch("id_to_modify"))
 
-    @course_plan.user_id = params.fetch("user_id")
+    
 
     if @course_plan.valid?
       @course_plan.save
