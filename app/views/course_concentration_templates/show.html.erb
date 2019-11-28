@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link course_concentration start -->
       <div class="col">
         <a href="/course_concentrations/<%= @course_concentration.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit course concentration
         </a>
       </div>
-      <!-- Edit link course_concentration end -->
 
-      <!-- Delete link course_concentration start -->
       <div class="col">
         <a href="/delete_course_concentration/<%= @course_concentration.id %>" class="btn btn-block btn-outline-secondary">
           Delete course concentration
         </a>
       </div>
-      <!-- Delete link course_concentration end -->
     </div>
 
     <dl>
       <dt>
         Course
       </dt>
-      <!-- Display course_id start -->
       <dd>
         <% if @course_concentration.course.present? %>
           <a href="/courses/<%= @course_concentration.course_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display course_id end -->
 
       <dt>
         Concentration
       </dt>
-      <!-- Display concentration_id start -->
       <dd>
         <% if @course_concentration.concentration.present? %>
           <a href="/concentrations/<%= @course_concentration.concentration_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display concentration_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@course_concentration.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@course_concentration.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

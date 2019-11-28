@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @course_concentration.present? %>
   <% if @course_concentration.errors.any? %>
     <% @course_concentration.errors.full_messages.each do |message| %>
@@ -16,33 +15,23 @@
 
 <hr>
 
-<!-- Form course_concentration start -->
 <form action="/create_course_concentration" method="post">
-<!-- Form course_concentration end -->
 
-  <!-- Label and input for course_id start -->
   <div class="form-group">
     <label for="course_id">
       Course
     </label>
 
-    <!-- Input for course_id start -->
     <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :title, @course_concentration.course_id), :class => "form-control") %>
-    <!-- Input for course_id end -->
   </div>
-  <!-- Label and input for course_id end -->
 
-  <!-- Label and input for concentration_id start -->
   <div class="form-group">
     <label for="concentration_id">
       Concentration
     </label>
 
-    <!-- Input for concentration_id start -->
     <%= select_tag(:concentration_id, options_from_collection_for_select(Concentration.all, :id, :name, @course_concentration.concentration_id), :class => "form-control") %>
-    <!-- Input for concentration_id end -->
   </div>
-  <!-- Label and input for concentration_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create course concentration

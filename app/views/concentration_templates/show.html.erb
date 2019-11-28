@@ -11,67 +11,53 @@
         </a>
       </div>
 
-      <!-- Edit link concentration start -->
       <div class="col">
         <a href="/concentrations/<%= @concentration.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit concentration
         </a>
       </div>
-      <!-- Edit link concentration end -->
 
-      <!-- Delete link concentration start -->
       <div class="col">
         <a href="/delete_concentration/<%= @concentration.id %>" class="btn btn-block btn-outline-secondary">
           Delete concentration
         </a>
       </div>
-      <!-- Delete link concentration end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @concentration.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Req unit
       </dt>
-      <!-- Display req_unit start -->
       <dd>
         <%= @concentration.req_unit %>
       </dd>
-      <!-- Display req_unit end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@concentration.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@concentration.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "concentration_templates/concentration_course_concentrations" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link course_category start -->
       <div class="col">
         <a href="/course_categories/<%= @course_category.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit course category
         </a>
       </div>
-      <!-- Edit link course_category end -->
 
-      <!-- Delete link course_category start -->
       <div class="col">
         <a href="/delete_course_category/<%= @course_category.id %>" class="btn btn-block btn-outline-secondary">
           Delete course category
         </a>
       </div>
-      <!-- Delete link course_category end -->
     </div>
 
     <dl>
       <dt>
         Course
       </dt>
-      <!-- Display course_id start -->
       <dd>
         <% if @course_category.course.present? %>
           <a href="/courses/<%= @course_category.course_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display course_id end -->
 
       <dt>
         Category
       </dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @course_category.category.present? %>
           <a href="/categories/<%= @course_category.category_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@course_category.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@course_category.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

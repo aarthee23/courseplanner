@@ -4,117 +4,79 @@
 
 <hr>
 
-<!-- Form user_course_selection start -->
 <form action="/update_user_course_selection/<%= @user_course_selection.id %>" method="post">
-<!-- Form user_course_selection end -->
 
-  <!-- Label and input for course_plan_id start -->
   <div class="form-group">
     <label for="course_plan_id">
       Course plan
     </label>
 
-    <!-- Input for course_plan_id start -->
     <%= select_tag(:course_plan_id, options_from_collection_for_select(CoursePlan.all, :id, :created_at, @user_course_selection.course_plan_id), :class => "form-control") %>
-    <!-- Input for course_plan_id end -->
   </div>
-  <!-- Label and input for course_plan_id end -->
 
-  <!-- Label and input for course_id start -->
   <div class="form-group">
     <label for="course_id">
       Course
     </label>
 
-    <!-- Input for course_id start -->
     <%= select_tag(:course_id, options_from_collection_for_select(Course.all, :id, :title, @user_course_selection.course_id), :class => "form-control") %>
-    <!-- Input for course_id end -->
   </div>
-  <!-- Label and input for course_id end -->
 
-  <!-- Label and input for professor start -->
   <div class="form-group">
     <label for="professor">
       Professor
     </label>
 
-    <!-- Input for professor start -->
     <input type="text" id="professor" name="professor" class="form-control" value="<%= @user_course_selection.professor %>">
-    <!-- Input for professor end -->
   </div>
-  <!-- Label and input for professor end -->
 
-  <!-- Label and input for quarter start -->
   <div class="form-group">
     <label for="quarter">
       Quarter
     </label>
 
-    <!-- Input for quarter start -->
     <input type="text" id="quarter" name="quarter" class="form-control" value="<%= @user_course_selection.quarter %>">
-    <!-- Input for quarter end -->
   </div>
-  <!-- Label and input for quarter end -->
 
-  <!-- Label and input for day start -->
   <div class="form-group">
     <label for="day">
       Day
     </label>
 
-    <!-- Input for day start -->
     <input type="text" id="day" name="day" class="form-control" value="<%= @user_course_selection.day %>">
-    <!-- Input for day end -->
   </div>
-  <!-- Label and input for day end -->
 
-  <!-- Label and input for hours_of_preparation start -->
   <div class="form-group">
     <label for="hours_of_preparation">
       Hours of preparation
     </label>
 
-    <!-- Input for hours_of_preparation start -->
     <input type="text" id="hours_of_preparation" name="hours_of_preparation" class="form-control" value="<%= @user_course_selection.hours_of_preparation %>">
-    <!-- Input for hours_of_preparation end -->
   </div>
-  <!-- Label and input for hours_of_preparation end -->
 
-  <!-- Label and input for rating start -->
   <div class="form-group">
     <label for="rating">
       Rating
     </label>
 
-    <!-- Input for rating start -->
     <input type="text" id="rating" name="rating" class="form-control" value="<%= @user_course_selection.rating %>">
-    <!-- Input for rating end -->
   </div>
-  <!-- Label and input for rating end -->
 
-  <!-- Label and input for bid_points start -->
   <div class="form-group">
     <label for="bid_points">
       Bid points
     </label>
 
-    <!-- Input for bid_points start -->
     <input type="text" id="bid_points" name="bid_points" class="form-control" value="<%= @user_course_selection.bid_points %>">
-    <!-- Input for bid_points end -->
   </div>
-  <!-- Label and input for bid_points end -->
 
-  <!-- Label and input for pre_req start -->
   <div class="form-group">
     <label for="pre_req">
       Pre req
     </label>
 
-    <!-- Input for pre_req start -->
     <input type="text" id="pre_req" name="pre_req" class="form-control" value="<%= @user_course_selection.pre_req %>">
-    <!-- Input for pre_req end -->
   </div>
-  <!-- Label and input for pre_req end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update user course selection
