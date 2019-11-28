@@ -1,0 +1,136 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      User course selection #<%= @user_course_selection.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/user_course_selections" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link user_course_selection start -->
+      <div class="col">
+        <a href="/user_course_selections/<%= @user_course_selection.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit user course selection
+        </a>
+      </div>
+      <!-- Edit link user_course_selection end -->
+
+      <!-- Delete link user_course_selection start -->
+      <div class="col">
+        <a href="/delete_user_course_selection/<%= @user_course_selection.id %>" class="btn btn-block btn-outline-secondary">
+          Delete user course selection
+        </a>
+      </div>
+      <!-- Delete link user_course_selection end -->
+    </div>
+
+    <dl>
+      <dt>
+        Course plan
+      </dt>
+      <!-- Display course_plan_id start -->
+      <dd>
+        <%= @user_course_selection.course_plan_id %>
+      </dd>
+      <!-- Display course_plan_id end -->
+
+      <dt>
+        Course
+      </dt>
+      <!-- Display course_id start -->
+      <dd>
+        <%= @user_course_selection.course_id %>
+      </dd>
+      <!-- Display course_id end -->
+
+      <dt>
+        Professor
+      </dt>
+      <!-- Display professor start -->
+      <dd>
+        <%= @user_course_selection.professor %>
+      </dd>
+      <!-- Display professor end -->
+
+      <dt>
+        Quarter
+      </dt>
+      <!-- Display quarter start -->
+      <dd>
+        <%= @user_course_selection.quarter %>
+      </dd>
+      <!-- Display quarter end -->
+
+      <dt>
+        Day
+      </dt>
+      <!-- Display day start -->
+      <dd>
+        <%= @user_course_selection.day %>
+      </dd>
+      <!-- Display day end -->
+
+      <dt>
+        Hours of preparation
+      </dt>
+      <!-- Display hours_of_preparation start -->
+      <dd>
+        <%= @user_course_selection.hours_of_preparation %>
+      </dd>
+      <!-- Display hours_of_preparation end -->
+
+      <dt>
+        Rating
+      </dt>
+      <!-- Display rating start -->
+      <dd>
+        <%= @user_course_selection.rating %>
+      </dd>
+      <!-- Display rating end -->
+
+      <dt>
+        Bid points
+      </dt>
+      <!-- Display bid_points start -->
+      <dd>
+        <%= @user_course_selection.bid_points %>
+      </dd>
+      <!-- Display bid_points end -->
+
+      <dt>
+        Pre req
+      </dt>
+      <!-- Display pre_req start -->
+      <dd>
+        <%= @user_course_selection.pre_req %>
+      </dd>
+      <!-- Display pre_req end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_course_selection.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@user_course_selection.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

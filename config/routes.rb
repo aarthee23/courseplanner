@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User course selection resource:
+
+  # CREATE
+  get("/user_course_selections/new", { :controller => "user_course_selections", :action => "new_form" })
+  post("/create_user_course_selection", { :controller => "user_course_selections", :action => "create_row" })
+
+  # READ
+  get("/user_course_selections", { :controller => "user_course_selections", :action => "index" })
+  get("/user_course_selections/:id_to_display", { :controller => "user_course_selections", :action => "show" })
+
+  # UPDATE
+  get("/user_course_selections/:prefill_with_id/edit", { :controller => "user_course_selections", :action => "edit_form" })
+  post("/update_user_course_selection/:id_to_modify", { :controller => "user_course_selections", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_course_selection/:id_to_remove", { :controller => "user_course_selections", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Course concentration resource:
 
   # CREATE
