@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Course category resource:
+
+  # CREATE
+  get("/course_categories/new", { :controller => "course_categories", :action => "new_form" })
+  post("/create_course_category", { :controller => "course_categories", :action => "create_row" })
+
+  # READ
+  get("/course_categories", { :controller => "course_categories", :action => "index" })
+  get("/course_categories/:id_to_display", { :controller => "course_categories", :action => "show" })
+
+  # UPDATE
+  get("/course_categories/:prefill_with_id/edit", { :controller => "course_categories", :action => "edit_form" })
+  post("/update_course_category/:id_to_modify", { :controller => "course_categories", :action => "update_row" })
+
+  # DELETE
+  get("/delete_course_category/:id_to_remove", { :controller => "course_categories", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Course plan resource:
 
   # CREATE

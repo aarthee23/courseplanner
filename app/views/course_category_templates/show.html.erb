@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Course category #<%= @course_category.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/course_categories" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link course_category start -->
+      <div class="col">
+        <a href="/course_categories/<%= @course_category.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit course category
+        </a>
+      </div>
+      <!-- Edit link course_category end -->
+
+      <!-- Delete link course_category start -->
+      <div class="col">
+        <a href="/delete_course_category/<%= @course_category.id %>" class="btn btn-block btn-outline-secondary">
+          Delete course category
+        </a>
+      </div>
+      <!-- Delete link course_category end -->
+    </div>
+
+    <dl>
+      <dt>
+        Course
+      </dt>
+      <!-- Display course_id start -->
+      <dd>
+        <%= @course_category.course_id %>
+      </dd>
+      <!-- Display course_id end -->
+
+      <dt>
+        Category
+      </dt>
+      <!-- Display category_id start -->
+      <dd>
+        <%= @course_category.category_id %>
+      </dd>
+      <!-- Display category_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@course_category.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@course_category.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

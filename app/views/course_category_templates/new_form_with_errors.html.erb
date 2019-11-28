@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @course_category.present? %>
+  <% if @course_category.errors.any? %>
+    <% @course_category.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new course category
+</h1>
+
+
+<hr>
+
+<!-- Form course_category start -->
+<form action="/create_course_category" method="post">
+<!-- Form course_category end -->
+
+  <!-- Label and input for course_id start -->
+  <div class="form-group">
+    <label for="course_id">
+      Course
+    </label>
+
+    <!-- Input for course_id start -->
+    <input type="text" id="course_id" name="course_id" class="form-control" value="<%= @course_category.course_id %>">
+    <!-- Input for course_id end -->
+  </div>
+  <!-- Label and input for course_id end -->
+
+  <!-- Label and input for category_id start -->
+  <div class="form-group">
+    <label for="category_id">
+      Category
+    </label>
+
+    <!-- Input for category_id start -->
+    <input type="text" id="category_id" name="category_id" class="form-control" value="<%= @course_category.category_id %>">
+    <!-- Input for category_id end -->
+  </div>
+  <!-- Label and input for category_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create course category
+  </button>
+</form>
+
+<hr>
+
+<a href="/course_categories">
+  Go back
+</a>
